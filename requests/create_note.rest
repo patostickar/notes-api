@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBzdGlja2FyIiwiaWQiOiI2MzA1OWZiYjhjM2RkOGMwZmQ4OThmZTUiLCJpYXQiOjE2NjEzMTM5MTh9.Q5tnET8cVjP4f2amedBeRljvG3MNF-YP14Z2xFSm74s
+
+{
+    "content": "Testing jwt",
+    "important": true
+}
