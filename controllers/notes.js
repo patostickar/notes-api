@@ -26,14 +26,17 @@ const getTokenFrom = (request) => {
   return null;
 };
 
+// this authorization logic should be in a middleware
+
 notesRouter.post('/', async (request, response) => {
   const body = request.body;
   const token = getTokenFrom(request);
   const decodedToken = jwt.verify(token, process.env.SECRET);
-  console.log(decodedToken);
+
   if (!decodedToken.id) {
     return response.status(401).json({ error: 'token missing or invalid' });
   }
+
   const user = await User.findById(decodedToken.id);
 
   const note = new Note({
